@@ -1,3 +1,3 @@
-# EntitySamples
+# EntitySamplesJpa
 
-JPA & Hibernate entity processing samples for blog posts.
+JPA entity processing samples for blog posts.
