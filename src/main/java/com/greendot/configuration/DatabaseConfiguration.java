@@ -30,7 +30,7 @@ import java.util.Properties;
  */
 @Configuration
 @PropertySource(value = {
-        "classpath:properties/datasource-${spring.profiles.active:default}.properties"
+        "classpath:properties/database-${spring.profiles.active:default}.properties"
 }, ignoreResourceNotFound = false)
 @EnableTransactionManagement
 public class DatabaseConfiguration implements EnvironmentAware {
@@ -39,13 +39,11 @@ public class DatabaseConfiguration implements EnvironmentAware {
 
     @Override
     public void setEnvironment(final Environment environment) {
-
         this.environment = environment;
     }
 
     @Bean
     public ProductDao productDao() {
-
         return new ProductDao();
     }
 
