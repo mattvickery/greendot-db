@@ -5,8 +5,6 @@
 
 package com.greendot.configuration;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -20,13 +18,11 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @PropertySource(value = {
         "classpath:properties/app.properties",
         "classpath:properties/app-${spring.profiles.active:default}.properties"
-})
+}, ignoreResourceNotFound = false)
 public class PropertiesConfiguration {
 
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
-
     @Bean
-    public static PropertySourcesPlaceholderConfigurer getProperties() {
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
 
         return new PropertySourcesPlaceholderConfigurer();
     }

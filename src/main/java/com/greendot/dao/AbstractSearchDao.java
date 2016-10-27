@@ -34,6 +34,7 @@ public class AbstractSearchDao<E extends Serializable, I extends Serializable>
     protected ThreadLocal<StopWatch> stopWatchThread = new ThreadLocal<StopWatch>() {
         @Override
         protected StopWatch initialValue() {
+
             return new StopWatch();
         }
     };
