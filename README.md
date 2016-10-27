@@ -2,9 +2,9 @@
 
 A sample JPA setup and configuration using: 
 
-  Hibernate as a persistence provider
-  Spring for declarative transaction handling
-  Foundation DAO classes as a basis for repository handling.
+  Hibernate as a persistence provider,
+  Spring for declarative transaction handling,
+  Foundation DAO classes as a basis for repository handling,
   Criteria API queries in the foundation DAO classes.
 
 Maven Dependencies
