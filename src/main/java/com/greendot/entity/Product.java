@@ -30,19 +30,23 @@ public class Product implements Serializable {
     private String productName;
 
     public Long getProductId() {
+
         return productId;
     }
 
     public Product setProductId(final Long productId) {
+
         this.productId = productId;
         return this;
     }
 
     public String getProductName() {
+
         return productName;
     }
 
     public Product setProductName(final String productName) {
+
         this.productName = productName;
         return this;
     }
@@ -67,6 +71,7 @@ public class Product implements Serializable {
 
     @Override
     public int hashCode() {
+
         if (productId != null)
             return Objects.hashCode(productId);
         return Objects.hash(productName);

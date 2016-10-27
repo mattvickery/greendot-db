@@ -11,8 +11,15 @@ import java.io.Serializable;
  * @author matt.d.vickery@greendotsoftware.co.uk
  * @since 10/25/16.
  */
-public interface CrudDao<E extends Serializable, I extends Serializable> extends SearchDao<E,I> {
+public interface MutatingEntityDao<E extends Serializable, I extends Serializable> {
+
     E create(final E entity, final I id);
-    E update(final E entity, final I id);
+
+    E upsert(final E entity, final I id);
+
     void delete(final E entity, final I id);
+
+    void detach(final E entity);
+
+    void flush();
 }

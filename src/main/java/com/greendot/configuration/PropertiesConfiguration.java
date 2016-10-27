@@ -27,6 +27,7 @@ public class PropertiesConfiguration {
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer getProperties() {
+
         return new PropertySourcesPlaceholderConfigurer();
     }
 }

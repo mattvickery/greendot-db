@@ -6,15 +6,11 @@
 package com.greendot.dao;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * @author matt.d.vickery@greendotsoftware.co.uk
- * @since 10/25/16.
+ * @since 10/27/16.
  */
-public interface SearchDao<E extends Serializable, I extends Serializable> {
-    Optional<E> findById(I id);
-
-    List<E> findAll();
+public interface ProductTypeDao<E extends Serializable, I extends Serializable>
+        extends MutatingEntityDao<E, I>, SearchDao<E, I> {
 }
