@@ -17,4 +17,4 @@ The provider used for the examples will be Hibernate, specifically version v5.2.
 
 Underlying Database
 -------------------
-The samples will run on H2 and...
+The samples will run on whichever database is configured in the properties files.
