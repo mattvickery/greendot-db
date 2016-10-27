@@ -1,3 +1,8 @@
+/*
+ *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
+ *  which is part of this source code package.
+ */
+
 package com.greendot.entity;
 
 import org.hibernate.Hibernate;
@@ -10,9 +15,6 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE.md', which is part of this source code package.
- *
  * @author matt.d.vickery@greendotsoftware.co.uk
  * @since 10/25/16.
  */
