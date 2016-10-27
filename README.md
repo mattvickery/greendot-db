@@ -1,6 +1,11 @@
-# EntitySamplesJpa
+# JpaTemplate
 
-JPA entity processing samples for blog posts.
+A sample JPA setup and configuration using: 
+
+  o Hibernate as a persistence provider,
+  o Spring for declarative transaction handling
+  o Foundation DAO classes as a basis for repository handling.
+  o Criteria API queries in the foundation DAO classes.
 
 Maven Dependencies
 ------------------
