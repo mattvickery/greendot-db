@@ -14,7 +14,17 @@ import java.util.Optional;
  * @since 10/25/16.
  */
 public interface SearchDao<E extends Serializable, I extends Serializable> {
+
+    /**
+     * Locate an entity using a primary key value of the supplied id.
+     * @param id a primary key value used for entity location.
+     * @return if found, an entity, an optional null otherwise.
+     */
     Optional<E> findById(I id);
 
+    /**
+     * Locate all entities of the type managed by the DAO.
+     * @return a list of entities located in the repository.
+     */
     List<E> findAll();
 }

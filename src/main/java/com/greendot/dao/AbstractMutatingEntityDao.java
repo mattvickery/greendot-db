@@ -25,11 +25,11 @@ public abstract class AbstractMutatingEntityDao<E extends Serializable, I extend
     private static final Logger LOG = getLogger(AbstractMutatingEntityDao.class);
 
     protected AbstractMutatingEntityDao(final Class<E> entityType, final Class<I> idType) {
-
         super(entityType, idType);
     }
 
     @Transactional
+    @Override
     public E create(final E entity, final I id) {
 
         notNull(entity, "Mandatory argument 'entity' is missing.");
@@ -44,6 +44,7 @@ public abstract class AbstractMutatingEntityDao<E extends Serializable, I extend
     }
 
     @Transactional
+    @Override
     public E upsert(final E entity, final I id) {
 
         notNull(entity, "Mandatory argument 'entity' is missing.");
@@ -56,6 +57,7 @@ public abstract class AbstractMutatingEntityDao<E extends Serializable, I extend
     }
 
     @Transactional
+    @Override
     public void delete(final E entity, final I id) {
 
         notNull(entity, "Mandatory argument 'entity' is missing.");
@@ -68,6 +70,7 @@ public abstract class AbstractMutatingEntityDao<E extends Serializable, I extend
     }
 
     @Transactional
+    @Override
     public void deleteAll() {
 
         try {
@@ -85,6 +88,7 @@ public abstract class AbstractMutatingEntityDao<E extends Serializable, I extend
         }
     }
 
+    @Override
     public void detach(final E entity) {
 
         notNull(entity, "Mandatory argument 'entity' is missing.");
@@ -92,6 +96,7 @@ public abstract class AbstractMutatingEntityDao<E extends Serializable, I extend
     }
 
     @Transactional
+    @Override
     public void flush() {
 
         getEntityManager().flush();

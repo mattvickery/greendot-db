@@ -31,7 +31,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource(value = {
         "classpath:properties/database-${spring.profiles.active:default}.properties"
-}, ignoreResourceNotFound = false)
+})
 @EnableTransactionManagement
 public class DatabaseConfiguration implements EnvironmentAware {
 
@@ -39,6 +39,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
 
     @Override
     public void setEnvironment(final Environment environment) {
+
         this.environment = environment;
     }
 
@@ -49,7 +50,6 @@ public class DatabaseConfiguration implements EnvironmentAware {
 
     @Bean
     public PersistenceAnnotationBeanPostProcessor persistenceAnnotationBeanPostProcessor() {
-
         return new PersistenceAnnotationBeanPostProcessor();
     }
 
