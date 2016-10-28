@@ -3,11 +3,12 @@
  *  which is part of this source code package.
  */
 
+package com.greendot.dao.custom.jpa;
+
 import com.greendot.configuration.DatabaseConfiguration;
 import com.greendot.configuration.PropertiesConfiguration;
-import com.greendot.dao.ProductTypeDao;
+import com.greendot.dao.custom.ProductDao;
 import com.greendot.entity.Product;
-import com.greendot.dao.ProductDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,24 +16,22 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
-
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 
 /**
  * @author matt.d.vickery@greendotsoftware.co.uk
- * @since 10/25/16.
+ * @since 10/28/16.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {
         PropertiesConfiguration.class,
         DatabaseConfiguration.class
 })
-public class ProductDaoTest {
+public class JpaProductDaoTest {
 
     @Autowired
-    private ProductTypeDao<Product, Long> productDao;
+    private ProductDao<Product, Long> productDao;
 
     @Test
     @Transactional

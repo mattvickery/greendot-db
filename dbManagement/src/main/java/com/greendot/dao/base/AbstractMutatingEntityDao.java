@@ -3,8 +3,14 @@
  *  which is part of this source code package.
  */
 
-package com.greendot.dao;
+/*
+ *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
+ *  which is part of this source code package.
+ */
 
+package com.greendot.dao.base;
+
+import com.greendot.dao.MutatingEntityDao;
 import org.slf4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
 
