@@ -16,7 +16,7 @@ A sample database access project setup and configuration using:
 
 # greendot-db-domain
 
-  A set of standard domain objects - useful across a number of distinct verticals. All of the entities are loaded by the JPA provider based on the package name name. Currently, this is configured in the greendot-db-jpa-core package but needs to move.
+  A set of standard domain objects - useful across a number of distinct verticals. All of the entities are loaded by the JPA provider based on the package name. Currently, this is configured in the greendot-db-jpa-core package but needs to move.
 
 # greendot-db-jpa-core
 
@@ -24,4 +24,4 @@ A sample database access project setup and configuration using:
   
 # greendot-db-dao
 
-  A set of repository interfaces and implementations for pure JPA DAO repositories. Each repository will manage an entity type as specified by standard domain objects located in greendot-db-domain
+  A set of repository interfaces and implementations for pure JPA, Spring Data and JDBC DAO repositories. Each repository will manage an entity type as specified by standard domain objects located in greendot-db-domain
