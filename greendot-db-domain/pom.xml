@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>greendot-db</groupId>
-            <artifactId>deps</artifactId>
+            <artifactId>greendot-db-deps</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
