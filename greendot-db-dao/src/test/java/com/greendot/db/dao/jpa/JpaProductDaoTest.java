@@ -5,17 +5,18 @@
 
 package com.greendot.db.dao.jpa;
 
-import com.greendot.db.jpa.configuration.JpaDatabaseConfiguration;
-import com.greendot.db.jpa.configuration.PropertiesConfiguration;
 import com.greendot.db.configuration.JpaDaoConfiguration;
 import com.greendot.db.dao.ProductDao;
+import com.greendot.db.jpa.configuration.JpaDatabaseConfiguration;
+import com.greendot.db.jpa.configuration.PropertiesConfiguration;
 import com.greendot.entity.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -32,7 +33,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 })
 public class JpaProductDaoTest {
 
-    @Autowired
+    @Resource(name = "jpaProductDao")
     private ProductDao<Product, Long> productDao;
 
     @Test

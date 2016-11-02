@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class JpaDaoConfiguration {
 
     @Bean
-    public ProductDao productDao() {
+    public ProductDao jpaProductDao() {
         return new JpaProductDao();
     }
 }
