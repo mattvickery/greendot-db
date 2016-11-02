@@ -1,4 +1,4 @@
-# JpaProjectTemplate
+# greendot-db
 
 A sample JPA setup and configuration using: 
 
