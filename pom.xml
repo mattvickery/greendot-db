@@ -9,15 +9,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>EntitySamplesJpa</artifactId>
+    <groupId>greendot-db</groupId>
+    <artifactId>greendot-db</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
    <modules>
-       <module>deps</module>
-       <module>domain</module>
-       <module>dbManagement</module>
+       <module>greendot-db-deps</module>
+       <module>greendot-db-jpa-core</module>
+       <module>greendot-db-domain</module>
+       <module>greendot-db-dao</module>
    </modules>
 
 </project>
