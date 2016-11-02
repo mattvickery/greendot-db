@@ -3,26 +3,6 @@
  *  which is part of this source code package.
  */
 
-/*
- *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
- *  which is part of this source code package.
- */
-
-/*
- *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
- *  which is part of this source code package.
- */
-
-/*
- *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
- *  which is part of this source code package.
- */
-
-/*
- *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
- *  which is part of this source code package.
- */
-
 package com.greendot.db.jpa.configuration;
 
 import org.apache.commons.dbcp2.BasicDataSource;
