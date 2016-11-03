@@ -5,6 +5,7 @@
 
 package com.greendot.entity.product;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.Hibernate;
 
@@ -56,20 +57,20 @@ public class Product implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
 
+        if (o == null)
+            return false;
         if (this == o)
             return true;
         if (!(Hibernate.getClass(o).equals(Product.class)))
             return false;
 
         final Product product = (Product) o;
-        if (product.productId == productId)
+        if ((getProductId() != null) && (product.getProductId() == getProductId()))
             return true;
-        if (productId == null) {
-            if (product.productName.equals(productName))
-                return true;
-        }
+        if (getProductId() == null)
+            return EqualsBuilder.reflectionEquals(this, product, "productId");
         return false;
     }
 

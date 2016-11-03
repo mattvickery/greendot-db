@@ -1,5 +1,7 @@
 package com.greendot.entity.people;
 
+import com.greendot.entity.product.Good;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.Hibernate;
 
@@ -67,21 +69,20 @@ public class PartyRole implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
 
+        if (o == null)
+            return false;
         if (this == o)
             return true;
-        if (!(Hibernate.getClass(o).equals(PartyRole.class)))
+        if (!(Hibernate.getClass(o).equals(Good.class)))
             return false;
 
         final PartyRole partyRole = (PartyRole) o;
-        if (partyRole.partyRoleId == partyRoleId)
+        if ((partyRoleId != null) && (partyRole.partyRoleId == partyRoleId))
             return true;
-        if (partyRoleId == null) {
-            if ((partyRole.party.equals(party)) &&
-                    (partyRole.role.equals(role)))
-                return true;
-        }
+        if (partyRoleId == null)
+            return EqualsBuilder.reflectionEquals(this, partyRole, "partyRoleId");
         return false;
     }
 

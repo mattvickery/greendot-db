@@ -1,6 +1,7 @@
 package com.greendot.entity.product;
 
 import com.greendot.entity.people.PartyRole;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.Hibernate;
 
@@ -56,21 +57,20 @@ public class Service extends Product implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
 
+        if (o == null)
+            return false;
         if (this == o)
             return true;
         if (!(Hibernate.getClass(o).equals(Service.class)))
             return false;
 
         final Service service = (Service) o;
-        if (service.getProductId() == getProductId())
+        if ((getProductId() != null) && (service.getProductId() == getProductId()))
             return true;
-        if (getProductId() == null) {
-            if ((service.providedBy.equals(providedBy)) &&
-                    (service.providedFor.equals(providedFor)))
-                return true;
-        }
+        if (getProductId() == null)
+            return EqualsBuilder.reflectionEquals(this, service, "productId");
         return false;
     }
 
