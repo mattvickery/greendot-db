@@ -79,7 +79,7 @@ public class Service extends Product implements Serializable {
 
         if (getProductId() != null)
             return Objects.hashCode(getProductId());
-        return Objects.hash(providedBy, providedFor);
+        return Objects.hash(providedBy, providedFor, getProductName());
     }
 
     @Override
