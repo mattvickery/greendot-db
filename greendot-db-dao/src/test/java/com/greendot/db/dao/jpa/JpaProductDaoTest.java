@@ -9,7 +9,7 @@ import com.greendot.db.configuration.JpaDaoConfiguration;
 import com.greendot.db.dao.ProductDao;
 import com.greendot.db.jpa.configuration.JpaDatabaseConfiguration;
 import com.greendot.db.jpa.configuration.PropertiesConfiguration;
-import com.greendot.entity.Product;
+import com.greendot.entity.product.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

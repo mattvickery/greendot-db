@@ -3,7 +3,7 @@
  *  which is part of this source code package.
  */
 
-package com.greendot.entity;
+package com.greendot.entity.product;
 
 import org.hibernate.Hibernate;
 

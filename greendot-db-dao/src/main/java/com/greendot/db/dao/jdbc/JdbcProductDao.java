@@ -6,7 +6,7 @@
 package com.greendot.db.dao.jdbc;
 
 import com.greendot.db.dao.ProductDao;
-import com.greendot.entity.Product;
+import com.greendot.entity.product.Product;
 
 import java.util.List;
 import java.util.Optional;

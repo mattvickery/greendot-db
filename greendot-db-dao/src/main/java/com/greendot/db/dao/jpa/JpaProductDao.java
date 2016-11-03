@@ -7,7 +7,7 @@ package com.greendot.db.dao.jpa;
 
 import com.greendot.db.jpa.core.AbstractMutatingEntityDao;
 import com.greendot.db.dao.ProductDao;
-import com.greendot.entity.Product;
+import com.greendot.entity.product.Product;
 import org.springframework.util.Assert;
 
 import javax.persistence.EntityManager;
