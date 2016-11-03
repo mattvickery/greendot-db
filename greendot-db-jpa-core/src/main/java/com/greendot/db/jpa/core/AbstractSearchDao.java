@@ -107,6 +107,12 @@ public class AbstractSearchDao<E extends Serializable, I extends Serializable>
     }
 
     @Transactional(readOnly = true)
+    public List<E> findAll(final long offset, final long size) {
+
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    @Transactional(readOnly = true)
     public long count() {
 
         final CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();

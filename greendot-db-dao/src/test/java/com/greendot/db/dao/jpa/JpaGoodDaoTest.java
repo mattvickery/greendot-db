@@ -6,9 +6,10 @@
 package com.greendot.db.dao.jpa;
 
 import com.greendot.db.configuration.JpaDaoConfiguration;
-import com.greendot.db.dao.ProductDao;
+import com.greendot.db.dao.GoodDao;
 import com.greendot.db.jpa.configuration.JpaDatabaseConfiguration;
 import com.greendot.db.jpa.configuration.PropertiesConfiguration;
+import com.greendot.entity.product.Good;
 import com.greendot.entity.product.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,23 +32,24 @@ import static org.hamcrest.MatcherAssert.assertThat;
         JpaDatabaseConfiguration.class,
         JpaDaoConfiguration.class
 })
-public class JpaProductDaoTest {
+public class JpaGoodDaoTest {
 
-    @Resource(name = "jpaProductDao")
-    private ProductDao<Product, Long> productDao;
+    @Resource(name = "jpaGoodDao")
+    private GoodDao<Good, Long> goodDao;
 
     @Test
     @Transactional
     public void detachedUpdateVerification() {
 
         final Long id = 12l;
-        final Product product = new Product().setProductId(id).setProductName("Cycle");
-        productDao.create(product, product.getProductId());
-        productDao.flush();
-        productDao.detach(product);
+        final Good good = new Good();
+        good.setProductId(id).setProductName("Trumpet");
+        goodDao.create(good, good.getProductId());
+        goodDao.flush();
+        goodDao.detach(good);
 
-        product.setProductId(13l);
-        final Product locatedEntity = productDao.findById(id).get();
+        good.setProductId(13l);
+        final Product locatedEntity = goodDao.findById(id).get();
 
         assertThat(locatedEntity.getProductId(), is(id));
     }

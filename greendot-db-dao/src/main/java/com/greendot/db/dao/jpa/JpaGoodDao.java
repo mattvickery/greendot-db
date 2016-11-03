@@ -5,9 +5,9 @@
 
 package com.greendot.db.dao.jpa;
 
-import com.greendot.db.dao.ProductDao;
+import com.greendot.db.dao.GoodDao;
 import com.greendot.db.jpa.core.AbstractMutatingEntityDao;
-import com.greendot.entity.product.Product;
+import com.greendot.entity.product.Good;
 import org.springframework.util.Assert;
 
 import javax.persistence.EntityManager;
@@ -17,12 +17,12 @@ import javax.persistence.PersistenceContext;
  * @author matt.d.vickery@greendotsoftware.co.uk
  * @since 10/25/16.
  */
-public class JpaProductDao extends AbstractMutatingEntityDao<Product, Long>
-        implements ProductDao<Product, Long> {
+public class JpaGoodDao extends AbstractMutatingEntityDao<Good, Long>
+        implements GoodDao<Good, Long> {
 
-    public JpaProductDao() {
+    public JpaGoodDao() {
 
-        super(Product.class, Long.class);
+        super(Good.class, Long.class);
     }
 
     @PersistenceContext(name = "greendot-jpa-db-test")

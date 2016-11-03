@@ -5,8 +5,6 @@
 
 package com.greendot.db.dao.jdbc;
 
-import static org.junit.Assert.*;
-
 /**
  * @author matt.d.vickery@greendotsoftware.co.uk
  * @since 11/2/16.

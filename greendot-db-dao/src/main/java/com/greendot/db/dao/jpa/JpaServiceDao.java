@@ -5,31 +5,31 @@
 
 package com.greendot.db.dao.jpa;
 
-import com.greendot.db.dao.ProductDao;
+import com.greendot.db.dao.ServiceDao;
 import com.greendot.db.jpa.core.AbstractMutatingEntityDao;
-import com.greendot.entity.product.Product;
-import org.springframework.util.Assert;
+import com.greendot.entity.product.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import static org.springframework.util.Assert.notNull;
 
 /**
  * @author matt.d.vickery@greendotsoftware.co.uk
  * @since 10/25/16.
  */
-public class JpaProductDao extends AbstractMutatingEntityDao<Product, Long>
-        implements ProductDao<Product, Long> {
+public class JpaServiceDao extends AbstractMutatingEntityDao<Service, Long>
+        implements ServiceDao<Service, Long> {
 
-    public JpaProductDao() {
-
-        super(Product.class, Long.class);
+    public JpaServiceDao() {
+        super(Service.class, Long.class);
     }
 
     @PersistenceContext(name = "greendot-jpa-db-test")
     @Override
     public void setEntityManager(final EntityManager entityManager) {
 
-        Assert.notNull(entityManager, "Mandatory argument 'entityManager' is missing.");
+        notNull(entityManager, "Mandatory argument 'entityManager' is missing.");
         super.setEntityManager(entityManager);
     }
 }

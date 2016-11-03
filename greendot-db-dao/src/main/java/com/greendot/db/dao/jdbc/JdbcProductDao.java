@@ -50,6 +50,12 @@ public class JdbcProductDao implements ProductDao<Product, Long> {
     }
 
     @Override
+    public List<Product> updateAll(Product entity) {
+
+        return null;
+    }
+
+    @Override
     public Optional<Product> findById(Long id) {
 
         return null;
@@ -57,6 +63,12 @@ public class JdbcProductDao implements ProductDao<Product, Long> {
 
     @Override
     public List<Product> findAll() {
+
+        return null;
+    }
+
+    @Override
+    public List<Product> findAll(long offset, long size) {
 
         return null;
     }

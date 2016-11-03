@@ -37,4 +37,10 @@ public interface SearchDao<E extends Serializable, I extends Serializable> {
      * @return a list of entities located in the repository.
      */
     List<E> findAll();
+
+    /**
+     * Locate all entities of the type managed by the DAO using the pagination criteria supplied.
+     * @return a list of entities located in the repository.
+     */
+    List<E> findAll(final long offset, final long size);
 }

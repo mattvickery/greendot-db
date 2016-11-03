@@ -6,10 +6,10 @@
 package com.greendot.db.dao.jpa;
 
 import com.greendot.db.configuration.JpaDaoConfiguration;
-import com.greendot.db.dao.ProductDao;
+import com.greendot.db.dao.ServiceDao;
 import com.greendot.db.jpa.configuration.JpaDatabaseConfiguration;
 import com.greendot.db.jpa.configuration.PropertiesConfiguration;
-import com.greendot.entity.product.Product;
+import com.greendot.entity.product.Service;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -31,23 +31,24 @@ import static org.hamcrest.MatcherAssert.assertThat;
         JpaDatabaseConfiguration.class,
         JpaDaoConfiguration.class
 })
-public class JpaProductDaoTest {
+public class JpaServiceDaoTest {
 
-    @Resource(name = "jpaProductDao")
-    private ProductDao<Product, Long> productDao;
+    @Resource(name = "jpaServiceDao")
+    private ServiceDao<Service, Long> serviceDao;
 
     @Test
     @Transactional
     public void detachedUpdateVerification() {
 
         final Long id = 12l;
-        final Product product = new Product().setProductId(id).setProductName("Cycle");
-        productDao.create(product, product.getProductId());
-        productDao.flush();
-        productDao.detach(product);
+        final Service service = new Service();
+        service.setProductId(id).setProductName("Cycle");
+        serviceDao.create(service, service.getProductId());
+        serviceDao.flush();
+        serviceDao.detach(service);
 
-        product.setProductId(13l);
-        final Product locatedEntity = productDao.findById(id).get();
+        service.setProductId(13l);
+        final Service locatedEntity = serviceDao.findById(id).get();
 
         assertThat(locatedEntity.getProductId(), is(id));
     }

@@ -7,7 +7,7 @@ package com.greendot.db.dao;
 
 import com.greendot.db.jpa.core.MutatingEntityDao;
 import com.greendot.db.jpa.core.SearchDao;
-import com.greendot.entity.product.Product;
+import com.greendot.entity.product.Service;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
  * @since 10/27/16.
  */
 @Repository
-public interface ProductDao<E extends Product, I extends Long>
+public interface ServiceDao<E extends Service, I extends Long>
         extends MutatingEntityDao<E, I>, SearchDao<E, I> {
 }

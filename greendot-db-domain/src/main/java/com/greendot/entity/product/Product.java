@@ -5,28 +5,32 @@
 
 package com.greendot.entity.product;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
+
+import static org.apache.commons.lang3.builder.ToStringStyle.SIMPLE_STYLE;
 
 /**
  * @author matt.d.vickery@greendotsoftware.co.uk
  * @since 10/25/16.
  */
+@Inheritance()
+@DiscriminatorColumn(name="PRODUCT_TYPE")
 @Entity
 @Table(name = "PRODUCT")
 public class Product implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
-    @Column(name = "ID")
+    @Column(name = "PRODUCT_ID")
     private Long productId;
 
-    @Column(name = "NAME", length = 12)
+    @Column(name = "NAME", length = 512)
     private String productName;
 
     public Long getProductId() {
@@ -75,5 +79,10 @@ public class Product implements Serializable {
         if (productId != null)
             return Objects.hashCode(productId);
         return Objects.hash(productName);
+    }
+
+    @Override
+    public String toString() {
+        return new ReflectionToStringBuilder(this, SIMPLE_STYLE).toString();
     }
 }
