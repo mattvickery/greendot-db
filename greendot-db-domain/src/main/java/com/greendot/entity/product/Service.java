@@ -67,8 +67,8 @@ public class Service extends Product implements Serializable {
         if (service.getProductId() == getProductId())
             return true;
         if (getProductId() == null) {
-            if ((service.providedBy == providedBy) &&
-                    (service.providedFor == providedFor))
+            if ((service.providedBy.equals(providedBy)) &&
+                    (service.providedFor.equals(providedFor)))
                 return true;
         }
         return false;

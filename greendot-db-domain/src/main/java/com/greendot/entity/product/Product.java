@@ -38,15 +38,15 @@ public class Product implements Serializable {
         return productId;
     }
 
+    public String getProductName() {
+
+        return productName;
+    }
+
     public Product setProductId(final Long productId) {
 
         this.productId = productId;
         return this;
-    }
-
-    public String getProductName() {
-
-        return productName;
     }
 
     public Product setProductName(final String productName) {
@@ -67,7 +67,7 @@ public class Product implements Serializable {
         if (product.productId == productId)
             return true;
         if (productId == null) {
-            if (product.productName == productName)
+            if (product.productName.equals(productName))
                 return true;
         }
         return false;

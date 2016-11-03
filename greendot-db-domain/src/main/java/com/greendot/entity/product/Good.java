@@ -61,8 +61,8 @@ public class Good extends Product implements Serializable {
         if (good.getProductId() == getProductId())
             return true;
         if (getProductId() == null) {
-            if ((good.batch == batch) &&
-                    (good.referenceIdentifier == referenceIdentifier))
+            if ((good.batch.equals(batch)) &&
+                    (good.referenceIdentifier.equals(referenceIdentifier)))
                 return true;
         }
         return false;
