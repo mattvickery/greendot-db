@@ -31,6 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.PersistenceException;
 import javax.persistence.criteria.CriteriaDelete;
 import java.io.Serializable;
+import java.util.List;
 
 import static org.slf4j.LoggerFactory.getLogger;
 import static org.springframework.util.Assert.notNull;
@@ -120,5 +121,13 @@ public abstract class AbstractMutatingEntityDao<E extends Serializable, I extend
     public void flush() {
 
         getEntityManager().flush();
+    }
+
+    @Transactional
+    @Override
+    public List<E> updateAll(E entity) {
+
+        // Get all non-null attributes from the supplied entity and perform a bulk update for each one.
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 }

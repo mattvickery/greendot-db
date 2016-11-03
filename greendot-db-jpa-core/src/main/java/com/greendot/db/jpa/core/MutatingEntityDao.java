@@ -16,6 +16,7 @@
 package com.greendot.db.jpa.core;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author matt.d.vickery@greendotsoftware.co.uk
@@ -55,4 +56,13 @@ public interface MutatingEntityDao<E extends Serializable, I extends Serializabl
     void detach(final E entity);
 
     void flush();
+
+    /**
+     * Examine the attributes of the supplied entity (apart from the PK) and bulk update all entities
+     * to the same value as each non-null attribute.
+     *
+     * @param entity that specifies bulk update values.
+     * @return a list of all entities that have been altered.
+     */
+    List<E> updateAll(final E entity);
 }
