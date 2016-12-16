@@ -2,27 +2,6 @@
  *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
  *  which is part of this source code package.
  */
-
-/*
- *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
- *  which is part of this source code package.
- */
-
-/*
- *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
- *  which is part of this source code package.
- */
-
-/*
- *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
- *  which is part of this source code package.
- */
-
-/*
- *  This file is subject to the terms and conditions defined in file 'LICENSE.md',
- *  which is part of this source code package.
- */
-
 package com.greendot.db.jpa.core;
 
 import org.slf4j.Logger;
